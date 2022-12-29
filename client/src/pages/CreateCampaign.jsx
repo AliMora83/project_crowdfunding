@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ethers } from 'ethers';
 
 import { useStateContext } from '../context';
-import { money } from '../assets';
+// import { money } from '../assets';
 import { CustomButton, FormField, Loader } from '../components';
 import { checkIfImage } from '../utils';
 
@@ -73,9 +73,10 @@ const CreateCampaign = () => {
             handleChange={(e) => handleFormFieldChange('description', e)}
           />
 
-        <div className="w-full flex justify-start items-center p-4 bg-[#8c6dfd] h-[120px] rounded-[10px]">
-          <img src={money} alt="money" className="w-[40px] h-[40px] object-contain"/>
-          <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">You will get 100% of the raised amount</h4>
+        <div className="w-full flex justify-center items-center p-4 bg-[#655534] h-[120px] rounded-[10px]">
+          {/* <img src={money} alt="money" className="w-[40px] h-[40px] object-contain"/> */}
+          <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">
+            Thank you for using our platform to help achieve your goals!</h4>
         </div>
 
         <div className="flex flex-wrap gap-[40px]">
@@ -107,7 +108,7 @@ const CreateCampaign = () => {
             <CustomButton 
               btnType="submit"
               title="Submit new campaign"
-              styles="bg-[#1dc071]"
+              styles="bg-[#caa969]"
             />
           </div>
       </form>
