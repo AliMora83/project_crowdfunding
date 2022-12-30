@@ -17,6 +17,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(0.8);
 }
 
+.dark {
+  color: #fff;
+  background: #080a0b;
+}
+
 /* New Colors
 [#655534], [#caa969]
  */
