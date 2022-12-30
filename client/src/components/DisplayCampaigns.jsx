@@ -11,6 +11,14 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
     navigate(`/campaign-details/${campaign.title}`, { state: campaign })
   }
   
+  const reversedCampaigns = React.useMemo(() => {
+    if (campaigns && campaigns.length > 0 ){
+      return [...campaigns].reverse()
+    } else {
+      return []
+    }
+  },[campaigns.length]) 
+
   return (
     <div>
       <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">{title} ({campaigns.length})</h1>
@@ -26,7 +34,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
           </p>
         )}
 
-        {!isLoading && campaigns.length > 0 && campaigns.map((campaign) => <FundCard 
+        {!isLoading && reversedCampaigns.length > 0 && reversedCampaigns.map((campaign) => <FundCard 
           key={campaign.id}
           {...campaign}
           handleClick={() => handleNavigate(campaign)}
